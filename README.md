@@ -29,5 +29,4 @@ horaria diaria usual de trabalho.
 * k) Teste as classes criadas da seguinte forma: i) No metodo main(), crie 1 data que
 represente a data atual e outra que represente o Natal deste ano; ii) Chame o
 metodo de comparacao das datas e imprima seu valor; iii) Adicione o objeto
-Na t a l à c c o l e c a o Da t a sComemo r a t i v a s e c h ame o me t o d o
-horasNaoTrabalhadas().
+Natal à coleção DatasComemorativas e chame o método horasNaoTrabalhadas().
