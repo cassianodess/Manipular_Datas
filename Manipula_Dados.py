@@ -96,8 +96,8 @@ class DatasComemorativas:
     def datas(self):
         return self.__datas
 
-    def adiciona_data(self, data):
-        self.__datas.append(data)
+    def adiciona_data(self, nome, feriado, Fmundial, day):
+        self.__datas.append(DataComemorativa(nome, feriado, Fmundial, day))
 
     def lista_datas(self):
         for data in self.__datas:
@@ -123,7 +123,12 @@ class DatasComemorativas:
 atual = MinhaData("05/12/2020")
 natal = MinhaData("25/12/2020")
 print(atual.compara(natal))
-natal = DataComemorativa("Natal", True, True, "25/12/2020")
-feriado = DatasComemorativas()
-feriado.adiciona_data(natal)
-feriado.horas_nao_trabalhadas()
+
+natal = DatasComemorativas()
+natal.adiciona_data("Natal", True, True, "25/12/2020")
+natal.horas_nao_trabalhadas()
+
+"""
+>>>>>  Saída = -1
+>>>>>  Saída = 8h
+"""
