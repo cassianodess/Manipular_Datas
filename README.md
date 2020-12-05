@@ -26,7 +26,7 @@ data comemorativa que possui o parâmetro nome fornecido.
 quantidade de horas nao trabalhadas. Para tal, deve-se contar a quantidade de
 datas comemorativas que sao feriados e multiplica-la por 8 (oito) que e a carga
 horaria diaria usual de trabalho.
-* k) Teste as classes criadas da seguinte forma: i) No metodo main(), crie 1 data que
-represente a data atual e outra que represente o Natal deste ano; ii) Chame o
-metodo de comparacao das datas e imprima seu valor; iii) Adicione o objeto
-Natal à coleção DatasComemorativas e chame o método horasNaoTrabalhadas().
+* k) Teste as classes criadas da seguinte forma:
+  * i) No metodo main(), crie 1 data que represente a data atual e outra que represente o Natal deste ano;
+  * ii) Chame o metodo de comparacao das datas e imprima seu valor;
+  * iii) Adicione o objeto Natal à coleção DatasComemorativas e chame o método horasNaoTrabalhadas().
