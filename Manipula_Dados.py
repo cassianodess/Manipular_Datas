@@ -7,128 +7,102 @@ Trabalho 4 - LP
 class MinhaData:
 
     def __init__(self, dia, mes, ano):
-        self.__dia = dia
-        self.__mes = mes
-        self.__ano = ano
+        self.dia = dia
+        self.mes = mes
+        self.ano = ano
 
-    @property
-    def dia(self):
-        return self.__dia
 
-    @property
-    def mes(self):
-        return self.__mes
-
-    @property
-    def ano(self):
-        return self.__ano
 
     # Criar um construtor que receba uma string e inicialize a data
-    def __init__(self, string):
-        lista = string.split("/")
-        self.__dia = int(lista[0])
-        self.__mes = int(lista[1])
-        self.__ano = int(lista[2])
+    def __init__(self, nome, data, ehferiado):
+        self.nome = nome
+        lista = data.split("/")
+        self.dia = int(lista[0])
+        self.mes = int(lista[1])
+        self.ano = int(lista[2])
+        self.ehferiado = ehferiado
 
-    # Não entendi muito bem o que pediu
+
     def ToString(self):
         lista = []
-        lista.append(self.__dia)
-        lista.append(self.__mes)
-        lista.append(self.__ano)
-        string = ''.join(lista)
-        return string
+        lista.append(str(self.dia))
+        lista.append(str(self.mes))
+        lista.append(str(self.ano))
+        data = '/'.join(lista)
+        print(data)
+
+
 
     def compara(self, data):
-        if (self.__dia == data.dia) and (self.__mes == data.mes) and (self.__ano == data.ano):
+        if (self.dia == data.dia) and (self.mes == data.mes) and (self.ano == data.ano):
             return 0
 
-        if (self.__ano == data.ano) and (self.__mes == data.mes):
-            if (self.__dia > data.__dia):
+        if (self.ano == data.ano) and (self.mes == data.mes):
+            if (self.dia > data.dia):
                 return 1
             else:
                 return -1
-        if (self.__ano == data.ano):
-            if (self.__mes > data.mes):
+        if (self.ano == data.ano):
+            if (self.mes > data.mes):
                 return 1
             else:
                 return -1
-        if (self.__ano > data.ano):
+        if (self.ano > data.ano):
             return 1
         else:
             return -1
 
 
-class DataComemorativa:
-    nome = ""
-    feriado = False
-    Fmundial = False
-    day = ""
+class DataComemorativa(MinhaData):
 
-    def __init__(self, nome, feriado, Fmundial, day):
-        self.__nome = nome
-        self.__feriado = feriado
-        self.__Fmundial = Fmundial
-        self.__day = day
-
-    @property
-    def nome(self):
-        return self.__nome
-
-    @property
-    def feriado(self):
-        return self.__feriado
-
-    @property
-    def Fmundial(self):
-        return self.__Fmundial
-
-    @property
-    def day(self):
-        return self.__day
+    def __init__(self, nome, data):
+        self.feriado = True
+        super().__init__(nome, data, self.feriado)
 
 
 class DatasComemorativas:
     def __init__(self):
-        self.__datas = []
+        self.datas = []
 
-    @property
-    def datas(self):
-        return self.__datas
-
-    def adiciona_data(self, nome, feriado, Fmundial, day):
-        self.__datas.append(DataComemorativa(nome, feriado, Fmundial, day))
+    def adiciona_data(self, data):
+        self.datas.append(data)
+        print("="*30)
+        print(f"Data adicionada = {data.nome}")
+        print("="*30)
 
     def lista_datas(self):
-        for data in self.__datas:
-            print(data.__nome, data.__feriado, data.__Fmundial, data.__day)
+        if self.datas == []:
+            print("Lista vazia!")
+        print("="*30)
+        print("Lista de Datas comemorativas: ")
+
+        for data in self.datas:
+            print(f"{data.nome}: {data.dia}/{data.mes}/{data.ano}")
+
+        print("="*30)
 
     def remove_data(self, nome):
-        for data in self.__datas:
-            if nome in data.__nome:
-                del data.__nome
-                del data.__day
-                del data.__feriado
-                del data.__Fmundial
+        if nome in self.datas:
+            self.datas.remove(nome)
+            print("Data removida com sucesso!")
 
     def horas_nao_trabalhadas(self):
         cont = 0
-        for data in self.__datas:
-            if (data.feriado == True):
-                cont += 1
-        print(f"{cont * 8}h")
-        return cont * 8
+        for data in self.datas:
+            cont += 1
 
+        print(f"{cont * 8}h não trabalhadas")
+        print("=" * 30)
 
-atual = MinhaData("05/12/2020")
-natal = MinhaData("25/12/2020")
+atual = MinhaData("atual", "06/12/2020", False)
+natal = MinhaData("natal", "25/12/2020", True)
 print(atual.compara(natal))
 
-natal = DatasComemorativas()
-natal.adiciona_data("Natal", True, True, "25/12/2020")
-natal.horas_nao_trabalhadas()
+dados = DatasComemorativas()
+dados.adiciona_data(natal)
+dados.horas_nao_trabalhadas()
 
 """
->>>>>  Saída = -1
->>>>>  Saída = 8h
+SAÍDA = -1
+SAÍDA = 8h
 """
