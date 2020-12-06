@@ -11,8 +11,6 @@ class MinhaData:
         self.mes = mes
         self.ano = ano
 
-
-
     # Criar um construtor que receba uma string e inicialize a data
     def __init__(self, nome, data, ehferiado):
         self.nome = nome
@@ -22,7 +20,6 @@ class MinhaData:
         self.ano = int(lista[2])
         self.ehferiado = ehferiado
 
-
     def ToString(self):
         lista = []
         lista.append(str(self.dia))
@@ -30,8 +27,6 @@ class MinhaData:
         lista.append(str(self.ano))
         data = '/'.join(lista)
         print(data)
-
-
 
     def compara(self, data):
         if (self.dia == data.dia) and (self.mes == data.mes) and (self.ano == data.ano):
@@ -66,20 +61,20 @@ class DatasComemorativas:
 
     def adiciona_data(self, data):
         self.datas.append(data)
-        print("="*30)
+        print("=" * 30)
         print(f"Data adicionada = {data.nome}")
-        print("="*30)
+        print("=" * 30)
 
     def lista_datas(self):
         if self.datas == []:
             print("Lista vazia!")
-        print("="*30)
+        print("=" * 30)
         print("Lista de Datas comemorativas: ")
 
         for data in self.datas:
             print(f"{data.nome}: {data.dia}/{data.mes}/{data.ano}")
 
-        print("="*30)
+        print("=" * 30)
 
     def remove_data(self, nome):
         if nome in self.datas:
@@ -93,6 +88,7 @@ class DatasComemorativas:
 
         print(f"{cont * 8}h não trabalhadas")
         print("=" * 30)
+
 
 atual = MinhaData("atual", "06/12/2020", False)
 natal = MinhaData("natal", "25/12/2020", True)
