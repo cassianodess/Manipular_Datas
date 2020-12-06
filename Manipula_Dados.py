@@ -12,13 +12,12 @@ class MinhaData:
         self.ano = ano
 
     # Criar um construtor que receba uma string e inicialize a data
-    def __init__(self, nome, data, ehferiado):
+    def __init__(self, nome, data):
         self.nome = nome
         lista = data.split("/")
         self.dia = int(lista[0])
         self.mes = int(lista[1])
         self.ano = int(lista[2])
-        self.ehferiado = ehferiado
 
     def ToString(self):
         lista = []
@@ -52,7 +51,7 @@ class DataComemorativa(MinhaData):
 
     def __init__(self, nome, data):
         self.feriado = True
-        super().__init__(nome, data, self.feriado)
+        super().__init__(nome, data)
 
 
 class DatasComemorativas:
@@ -90,8 +89,8 @@ class DatasComemorativas:
         print("=" * 30)
 
 
-atual = MinhaData("atual", "06/12/2020", False)
-natal = MinhaData("natal", "25/12/2020", True)
+atual = MinhaData("atual", "06/12/2020")
+natal = MinhaData("natal", "25/12/2020")
 print(atual.compara(natal))
 
 dados = DatasComemorativas()
