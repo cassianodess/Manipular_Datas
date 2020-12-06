@@ -90,12 +90,13 @@ class DatasComemorativas:
 
 
 atual = MinhaData("atual", "06/12/2020")
-natal = MinhaData("natal", "25/12/2020")
+natal = DataComemorativa("natal", "25/12/2020")
 print(atual.compara(natal))
 
-dados = DatasComemorativas()
-dados.adiciona_data(natal)
-dados.horas_nao_trabalhadas()
+data = DatasComemorativas()
+data.adiciona_data(natal)
+data.horas_nao_trabalhadas()
+
 
 """
 SAÍDA = -1
