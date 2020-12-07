@@ -19,13 +19,8 @@ class MinhaData:
         self.mes = int(lista[1])
         self.ano = int(lista[2])
 
-    def ToString(self):
-        lista = []
-        lista.append(str(self.dia))
-        lista.append(str(self.mes))
-        lista.append(str(self.ano))
-        data = '/'.join(lista)
-        print(data)
+    def __str__(self):  # Tostring
+        return f"{self.dia}/{self.mes}/{self.ano}"
 
     def compara(self, data):
         if (self.dia == data.dia) and (self.mes == data.mes) and (self.ano == data.ano):
@@ -50,7 +45,6 @@ class MinhaData:
 class DataComemorativa(MinhaData):
 
     def __init__(self, nome, data):
-        self.feriado = True
         super().__init__(nome, data)
 
 
@@ -60,9 +54,6 @@ class DatasComemorativas:
 
     def adiciona_data(self, data):
         self.datas.append(data)
-        print("=" * 30)
-        print(f"Data adicionada = {data.nome}")
-        print("=" * 30)
 
     def lista_datas(self):
         if self.datas == []:
@@ -78,25 +69,21 @@ class DatasComemorativas:
     def remove_data(self, nome):
         if nome in self.datas:
             self.datas.remove(nome)
-            print("Data removida com sucesso!")
 
     def horas_nao_trabalhadas(self):
         cont = 0
         for data in self.datas:
             cont += 1
-
-        print(f"{cont * 8}h não trabalhadas")
-        print("=" * 30)
+        return cont * 8
 
 
 atual = MinhaData("atual", "06/12/2020")
 natal = DataComemorativa("natal", "25/12/2020")
 print(atual.compara(natal))
 
-data = DatasComemorativas()
-data.adiciona_data(natal)
-data.horas_nao_trabalhadas()
-
+dados = DatasComemorativas()
+dados.adiciona_data(natal)
+print(dados.horas_nao_trabalhadas())
 
 """
 SAÍDA = -1
