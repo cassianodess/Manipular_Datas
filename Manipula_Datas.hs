@@ -66,10 +66,6 @@ compara (DataComemorativa _ x y z) (MinhaData _ a b c)
 adiciona :: Data -> [Data]
 adiciona (DataComemorativa a b c d) = []++[(DataComemorativa a b c d)]
 
--- DatasComemorativas :: Data -> [Data]
--- DatasComemorativas (DataComemorativa a b c d) = []++[(DataComemorativa a b c d)]
-
-
 -- remove :: String -> [Data] -> [Data]
 -- remove _ [] = []
 -- remove x [(DataComemorativa a b c d )]  
