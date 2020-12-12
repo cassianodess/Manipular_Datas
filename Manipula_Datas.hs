@@ -66,6 +66,7 @@ compara (DataComemorativa _ x y z) (MinhaData _ a b c)
 adiciona :: Data -> [Data]
 adiciona (DataComemorativa a b c d) = []++[(DataComemorativa a b c d)]
 
+-- >>> AQUI NO REMOVE, FUNCIONA, MAS TORNA O QUE ESTÁ ABAIXO DELE COM UM WARNING DE INDENTAÇÃO, NÃO ENTENDI O PORQUÊ, POR ISSO O DEIXEI COMENTADO <<<
 -- remove :: String -> [Data] -> [Data]
 -- remove _ [] = []
 -- remove x [(DataComemorativa a b c d )]  
