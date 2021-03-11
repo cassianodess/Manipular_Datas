@@ -71,10 +71,7 @@ class DatasComemorativas:
             self.datas.remove(nome)
 
     def horas_nao_trabalhadas(self):
-        cont = 0
-        for data in self.datas:
-            cont += 1
-        return cont * 8
+        return len(self.datas)*8
 
 
 atual = MinhaData("atual", "06/12/2020")
