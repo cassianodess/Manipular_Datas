@@ -28,5 +28,5 @@ datas comemorativas que são feriados e multiplicá-la por 8 (oito) que é a car
 horária diária usual de trabalho.
 * k) Teste as classes criadas da seguinte forma:
   * i) No metodo `main()`, crie 1 data que represente a data `atual` e outra que represente o `Natal` deste ano;
-  * ii) Chame o método de comparação das datas e imprima seu valor;
+  * ii) Chame o método de `comparação` das datas e imprima seu valor;
   * iii) Adicione o objeto `Natal` à coleção `DatasComemorativas` e chame o método `horasNaoTrabalhadas()`.
