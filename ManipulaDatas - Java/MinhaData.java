@@ -3,25 +3,26 @@ public class MinhaData {
     private String nome;
 
     // Construtor
-    public MinhaData(int dia, int mes, int ano) {
-        this.setDia(dia);
-        this.setMes(mes);
-        this.setAno(ano);
+    public MinhaData(int dia, int mes, int ano, String nome) {
+        this.dia = dia;
+        this.mes = mes;
+        this.ano = ano;
+        this.nome = nome;
 
     }
 
     // 2º Contrutor
     public MinhaData(String data, String nome) {
-        this.setDia(Integer.parseInt(data.split("/")[0]));
-        this.setMes(Integer.parseInt(data.split("/")[1]));
-        this.setAno(Integer.parseInt(data.split("/")[2]));
-        this.setNome(nome);
+        this.dia = Integer.parseInt(data.split("/")[0]);
+        this.mes = Integer.parseInt(data.split("/")[1]);
+        this.ano = Integer.parseInt(data.split("/")[2]);
+        this.nome = nome;
 
     }
 
     // Métodos públicos
-    public void Mostra() {
-        System.out.printf("%s: %d/%d/%d\n", this.getNome(), this.getDia(), this.getMes(), this.getAno());
+    public String toString() {
+        return String.format("%s: %d/%d/%d", this.getNome(), this.getDia(), this.getMes(), this.getAno());
     }
 
     public int Compara(MinhaData data) {

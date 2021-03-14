@@ -1,13 +1,15 @@
 public class DataComemorativa extends MinhaData {
     // Atributos
-    private boolean fnormal = true, fmundial = true;
+    private boolean fnormal, fmundial;
 
-    public DataComemorativa(String data, String nome) {
+    public DataComemorativa(String data, String nome, boolean fnormal, boolean fmundial) {
         super(data, nome);
+        this.fnormal = fnormal;
+        this.fmundial = fmundial;
     }
 
     // Métodos Especiais
-    protected boolean getFNormal() {
+    protected boolean isFNormal() {
         return this.fnormal;
     }
 
@@ -16,7 +18,7 @@ public class DataComemorativa extends MinhaData {
 
     }
 
-    protected boolean getFMundial() {
+    protected boolean isFMundial() {
         return this.fmundial;
     }
 

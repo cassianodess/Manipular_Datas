@@ -15,7 +15,7 @@ retornado deve ser `0` se essas datas sao iguais, `-1` se a primeira data e ante
 ultima, ou `+1` se a primeira e posterior à ultima.
 * f) Crie uma segunda classe, chamada `DataComemorativa`, a qual representará as
 diferentes datas comemorativas. Uma data comemorativa normalmente contém
-um nome, se é feriado ou não, se este feriado é mundial e o dia associado.
+um `nome`, se é `feriado` ou não, se este feriado é `mundial` e o `dia` associado.
 * g) Crie uma terceira classe chamada `DatasComemorativas`, a qual deverá conter
 uma coleção que armazenará todas as datas comemorativas existentes.
 * h) Implemente nesta terceira classe o método `adiciona()`, que insere uma data
